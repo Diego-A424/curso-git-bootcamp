@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Expo Ingenieria | Curso Git y GitHub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="topbar" aria-label="Navegacion principal">
+        <a class="brand" href="#inicio">Expo Ingenieria</a>
+        <div class="nav-links">
+          <a href="#equipos">Equipos</a>
+          <a href="#directorio">Directorio</a>
+          <a href="#flujo">Flujo Git</a>
+        </div>
+      </nav>
+
+      <section id="inicio" class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Bootcamp Git + GitHub</p>
+          <h1>Proyectos de ingenieria con historial claro</h1>
+          <!-- ZONA DE CONFLICTO CONTROLADO: todos editaran esta linea durante el laboratorio. -->
+          <p id="tema-oficial" class="theme-line">Tema oficial: convertir cambios sueltos en colaboracion profesional.</p>
+          <p class="hero-text">
+            Esta pagina sera modificada por cada alumno usando ramas, commits,
+            Pull Requests y resolucion de conflictos.
+          </p>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="equipos" class="section intro-section">
+        <div class="section-heading">
+          <p class="eyebrow">Contexto</p>
+          <h2>El problema que Git resuelve</h2>
+        </div>
+        <div class="problem-grid">
+          <article>
+            <h3>Antes</h3>
+            <p>Archivos duplicados, versiones perdidas, cambios por WhatsApp y miedo a tocar codigo del equipo.</p>
+          </article>
+          <article>
+            <h3>Despues</h3>
+            <p>Historial visible, ramas por tarea, revision de cambios y una forma ordenada de colaborar.</p>
+          </article>
+          <article>
+            <h3>Hoy</h3>
+            <p>Vamos a practicar el flujo que se usa en materias, hackathons, residencias y empresas.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="directorio" class="section directory-section">
+        <div class="section-heading">
+          <p class="eyebrow">Ejercicio principal</p>
+          <h2>Directorio de participantes</h2>
+          <p>
+            Agrega tu tarjeta al final de la cuadricula. Hazlo en tu rama y despues
+            subelo con un Pull Request.
+          </p>
+        </div>
+
+        <div class="student-grid">
+          <article class="student-card featured">
+            <p class="student-label">Instructor</p>
+            <h3>Aldo Contreras</h3>
+            <dl>
+              <div>
+                <dt>Rol</dt>
+                <dd>Instructor Git + GitHub</dd>
+              </div>
+              <div>
+                <dt>Area</dt>
+                <dd>Ingenieria de software</dd>
+              </div>
+              <div>
+                <dt>Herramienta</dt>
+                <dd>Git, GitHub y VS Code</dd>
+              </div>
+              <div>
+                <dt>Proyecto</dt>
+                <dd>Un curso practico para dejar de perder cambios.</dd>
+              </div>
+            </dl>
+          </article>
+
+          <!-- ALUMNOS: agreguen su tarjeta debajo de este comentario. -->
+
+          <article class="student-card">
+            <p class="student-label">Ejemplo</p>
+            <h3>Nombre Apellido</h3>
+            <dl>
+              <div>
+                <dt>Semestre</dt>
+                <dd>5to semestre</dd>
+              </div>
+              <div>
+                <dt>Area</dt>
+                <dd>Desarrollo web</dd>
+              </div>
+              <div>
+                <dt>Herramienta</dt>
+                <dd>JavaScript</dd>
+              </div>
+              <div>
+                <dt>Proyecto</dt>
+                <dd>Una app para organizar equipos de laboratorio.</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section id="flujo" class="section workflow-section">
+        <div class="section-heading">
+          <p class="eyebrow">Flujo diario</p>
+          <h2>La ruta que vas a repetir</h2>
+        </div>
+        <ol class="workflow-list">
+          <li><span>1</span>Revisa donde estas con <code>git status</code>.</li>
+          <li><span>2</span>Crea una rama para tu tarea.</li>
+          <li><span>3</span>Edita, revisa diferencias y haz commits claros.</li>
+          <li><span>4</span>Sube tu rama y abre un Pull Request.</li>
+          <li><span>5</span>Actualiza tu trabajo antes de mezclarlo.</li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>
