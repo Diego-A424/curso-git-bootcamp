@@ -1,4 +1,4 @@
-# Buenas practicas desde el dia uno
+# Buenas practicas desde el dia 1
 
 ## Trabaja por tareas pequenas
 
