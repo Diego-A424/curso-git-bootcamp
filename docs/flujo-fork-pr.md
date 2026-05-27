@@ -2,6 +2,8 @@
 
 Este sera el flujo principal del curso.
 
+Si quieres la version de una sola pagina para seguir en clase, usa tambien [flujo-alumno.md](flujo-alumno.md).
+
 ## 1. Haz fork
 
 En GitHub:
@@ -59,6 +61,8 @@ Ejemplo:
 ```bash
 git switch -c feat/ana-ramirez
 ```
+
+Desde este punto, todos tus cambios del ejercicio deben hacerse en esta rama, no en `main`.
 
 ## 5. Edita el proyecto
 

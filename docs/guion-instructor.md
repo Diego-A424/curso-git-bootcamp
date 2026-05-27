@@ -58,9 +58,9 @@ Frase clave:
 
 > "Git no es guardar por guardar. Git es poder explicar que cambio, cuando cambio y por que cambio."
 
-## 0:25 - 1:05 | Uso individual
+## 0:25 - 1:05 | Primer flujo real
 
-Objetivo: que clonen, revisen estado, editen y creen su primer commit.
+Objetivo: que clonen, conecten el repo principal, creen una rama, editen y creen su primer commit sin trabajar directo en `main`.
 
 Primero, pide que hagan fork del repo.
 
@@ -70,12 +70,34 @@ Luego:
 git clone https://github.com/USUARIO-ALUMNO/curso-git-bootcamp.git
 cd curso-git-bootcamp
 git status
-git log --oneline
+git remote -v
 ```
 
 Di:
 
 > "`git status` es su radar. Si no saben que esta pasando, no adivinen: corran `git status`."
+
+Conecta el repo principal:
+
+```bash
+git remote add upstream https://github.com/USUARIO-INSTRUCTOR/curso-git-bootcamp.git
+git remote -v
+```
+
+Di:
+
+> "`origin` es su copia. `upstream` es el repo principal del curso. Esa diferencia evita que intenten subir directo al repo del instructor."
+
+Ahora crea la rama antes de editar:
+
+```bash
+git switch -c feat/nombre-apellido
+git branch
+```
+
+Di:
+
+> "Nunca arrancamos una tarea real directo en `main`. Primero creamos una rama. La rama es su mesa de trabajo."
 
 Abren `index.html`.
 
@@ -97,21 +119,23 @@ Explica staging:
 
 > "`git add` no guarda todavia. Solo prepara lo que entrara en la foto. `git commit` toma la foto."
 
-## 1:05 - 1:35 | Ramas
+## 1:05 - 1:35 | Ramas e historial
 
-Objetivo: que entiendan que cada tarea debe vivir en su propia rama.
+Objetivo: reforzar que cada tarea vive en su propia rama y que el historial permite explicar el proyecto.
 
 Muestra:
 
 ```bash
 git branch
-git switch -c feat/nombre-apellido
-git branch
+git log --oneline --decorate
+git switch main
+git status
+git switch feat/nombre-apellido
 ```
 
 Di:
 
-> "Una rama es una mesa de trabajo. Puedes experimentar sin ensuciar la mesa principal."
+> "Una rama es una mesa de trabajo. Puedes experimentar sin ensuciar la mesa principal. Si regreso a `main`, no estoy viendo exactamente lo mismo que en mi rama."
 
 Haz que todos confirmen que estan en su rama:
 
@@ -164,7 +188,6 @@ Pide a los alumnos que, en su rama, cambien esa misma linea con otro texto y hag
 Luego:
 
 ```bash
-git remote add upstream https://github.com/USUARIO-INSTRUCTOR/curso-git-bootcamp.git
 git fetch upstream
 git switch main
 git pull upstream main
@@ -202,6 +225,7 @@ git status
 git switch main
 git pull upstream main
 git switch -c feat/mi-tarea
+git diff
 git add .
 git commit -m "Describe el cambio"
 git push -u origin feat/mi-tarea

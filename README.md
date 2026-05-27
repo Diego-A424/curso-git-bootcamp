@@ -43,8 +43,11 @@ No hay dependencias, build, servidor ni instalacion de frameworks. Solo HTML, CS
 - [Configurar Git](docs/configurar-git.md): instalacion y configuracion para Windows, Linux y macOS.
 - [Guion del instructor](docs/guion-instructor.md): estructura minuto a minuto y frases sugeridas.
 - [Comandos esenciales](docs/comandos-esenciales.md): acordeon de comandos que si van a usar.
+- [Flujo del alumno](docs/flujo-alumno.md): pasos exactos que cada alumno debe seguir de inicio a fin.
 - [Flujo Fork + Pull Request](docs/flujo-fork-pr.md): practica principal del curso.
 - [Conflictos](docs/conflictos.md): laboratorio de conflicto controlado.
+- [Errores comunes](docs/errores-comunes.md): problemas esperados y como resolverlos rapido.
+- [Checkpoints del instructor](docs/checkpoints-instructor.md): puntos de control por minuto para no perder el ritmo.
 - [Buenas practicas](docs/buenas-practicas.md): reglas para trabajar bien desde el inicio.
 - [Plantilla de tarjeta](docs/plantilla-tarjeta.md): snippet que los alumnos pueden adaptar.
 
@@ -54,8 +57,8 @@ No hay dependencias, build, servidor ni instalacion de frameworks. Solo HTML, CS
 | --- | --- | --- |
 | 0:00 - 0:10 | Pitch | Por que Git importa en proyectos reales |
 | 0:10 - 0:25 | Conceptos minimos | Git, GitHub, commit, rama, Pull Request |
-| 0:25 - 1:05 | Uso individual | clone, status, diff, add, commit, log |
-| 1:05 - 1:35 | Ramas | branch, switch, flujo por tarea |
+| 0:25 - 1:05 | Primer flujo real | fork, clone, upstream, branch, edit, add, commit |
+| 1:05 - 1:35 | Ramas e historial | branch, switch, log, flujo por tarea |
 | 1:35 - 2:10 | GitHub | remote, push, fork, Pull Request |
 | 2:10 - 2:40 | Colaboracion | upstream, fetch, pull/merge, conflicto |
 | 2:40 - 3:00 | Cierre | buenas practicas, dudas y flujo diario |
@@ -93,7 +96,7 @@ git clone https://github.com/USUARIO-ALUMNO/curso-git-bootcamp.git
 cd curso-git-bootcamp
 ```
 
-Despues siguen [docs/flujo-fork-pr.md](docs/flujo-fork-pr.md).
+Despues siguen [docs/flujo-alumno.md](docs/flujo-alumno.md).
 
 ## Frase clave del curso
 
