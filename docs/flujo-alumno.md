@@ -2,7 +2,7 @@
 
 Esta es la receta completa que debes seguir durante el curso.
 
-La idea es que no trabajes directo en `main`. Primero haces fork, clonas tu copia, creas una rama, haces tu cambio y lo propones con un Pull Request.
+La idea es que no trabajes directo en `main`. Primero haces fork, clonas tu copia, creas una rama, haces tu cambio Swift y lo propones con un Pull Request.
 
 ## 1. Hacer fork
 
@@ -25,9 +25,10 @@ git clone https://github.com/TU-USUARIO/curso-git-bootcamp.git
 cd curso-git-bootcamp
 git status
 git remote -v
+swift run
 ```
 
-Debes ver `origin` apuntando a tu usuario.
+Debes ver `origin` apuntando a tu usuario y el programa `iOS Launch Lab` ejecutandose.
 
 ## 3. Conectar el repo del instructor
 
@@ -60,25 +61,37 @@ Confirma que estas en tu rama:
 git status
 ```
 
-## 5. Editar `index.html`
+## 5. Editar Swift
 
-Abre el proyecto:
+Abre el proyecto en Xcode desde `Package.swift` o usa VS Code:
 
 ```bash
 code .
 ```
 
-Busca este comentario en `index.html`:
+Archivo a modificar:
 
-```html
-<!-- ALUMNOS: agreguen su tarjeta debajo de este comentario. -->
+```text
+Sources/IOSLaunchLab/main.swift
+```
+
+Busca este comentario:
+
+```swift
+// ALUMNOS: agreguen su AppIdea debajo de este comentario.
 ```
 
 Copia la plantilla de [plantilla-tarjeta.md](plantilla-tarjeta.md), pegala debajo del comentario y cambia los datos por los tuyos.
 
-## 6. Revisar cambios
+## 6. Probar y revisar cambios
 
-Antes de guardar, revisa:
+Ejecuta el programa:
+
+```bash
+swift run
+```
+
+Luego revisa Git:
 
 ```bash
 git status
@@ -90,15 +103,15 @@ Si ves archivos que no querias cambiar, avisa antes de hacer commit.
 ## 7. Crear commit
 
 ```bash
-git add index.html
-git commit -m "Agrega tarjeta de Nombre Apellido"
+git add Sources/IOSLaunchLab/main.swift
+git commit -m "Agrega idea iOS de Nombre Apellido"
 git log --oneline
 ```
 
 Ejemplo:
 
 ```bash
-git commit -m "Agrega tarjeta de Ana Ramirez"
+git commit -m "Agrega idea iOS de Ana Ramirez"
 ```
 
 ## 8. Subir tu rama
@@ -143,12 +156,13 @@ Si hay conflicto, sigue [conflictos.md](conflictos.md).
 
 ## 11. Resolver y subir cambios finales
 
-Despues de resolver un conflicto o ajustar tu tarjeta:
+Despues de resolver un conflicto o ajustar tu idea:
 
 ```bash
 git status
-git add index.html
+git add Sources/IOSLaunchLab/main.swift
 git commit
+swift run
 git push
 ```
 
@@ -156,8 +170,9 @@ Si no hubo conflicto y solo hiciste un ajuste normal:
 
 ```bash
 git status
-git add index.html
-git commit -m "Ajusta tarjeta de Nombre Apellido"
+git add Sources/IOSLaunchLab/main.swift
+git commit -m "Ajusta idea iOS de Nombre Apellido"
+swift run
 git push
 ```
 
@@ -169,6 +184,7 @@ git switch main
 git pull upstream main
 git switch -c feat/mi-tarea
 # editar
+swift run
 git diff
 git add .
 git commit -m "Mensaje claro"

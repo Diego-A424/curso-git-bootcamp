@@ -23,6 +23,7 @@ https://github.com/TU-USUARIO/curso-git-bootcamp
 ```bash
 git clone https://github.com/TU-USUARIO/curso-git-bootcamp.git
 cd curso-git-bootcamp
+swift run
 ```
 
 Revisa donde estas:
@@ -64,25 +65,26 @@ git switch -c feat/ana-ramirez
 
 Desde este punto, todos tus cambios del ejercicio deben hacerse en esta rama, no en `main`.
 
-## 5. Edita el proyecto
+## 5. Edita el proyecto Swift
 
-Abre `index.html`.
+Abre `Sources/IOSLaunchLab/main.swift`.
 
 Busca este comentario:
 
-```html
-<!-- ALUMNOS: agreguen su tarjeta debajo de este comentario. -->
+```swift
+// ALUMNOS: agreguen su AppIdea debajo de este comentario.
 ```
 
-Agrega tu tarjeta usando la plantilla de [plantilla-tarjeta.md](plantilla-tarjeta.md).
+Agrega tu idea usando la plantilla de [plantilla-tarjeta.md](plantilla-tarjeta.md).
 
-## 6. Revisa y guarda
+## 6. Prueba, revisa y guarda
 
 ```bash
+swift run
 git status
 git diff
-git add index.html
-git commit -m "Agrega tarjeta de Nombre Apellido"
+git add Sources/IOSLaunchLab/main.swift
+git commit -m "Agrega idea iOS de Nombre Apellido"
 ```
 
 ## 7. Sube tu rama
@@ -108,9 +110,10 @@ En GitHub:
 No cierres el PR. Corrige en la misma rama:
 
 ```bash
+swift run
 git status
-git add index.html
-git commit -m "Ajusta tarjeta de Nombre Apellido"
+git add Sources/IOSLaunchLab/main.swift
+git commit -m "Ajusta idea iOS de Nombre Apellido"
 git push
 ```
 
@@ -124,6 +127,7 @@ git switch main
 git pull upstream main
 git switch -c feat/mi-tarea
 # editar archivos
+swift run
 git diff
 git add .
 git commit -m "Describe el cambio"

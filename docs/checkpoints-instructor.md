@@ -8,7 +8,8 @@ Debes tener listo:
 
 - Repo publico en GitHub.
 - URL visible para todos.
-- `index.html` abierto.
+- `Package.swift` abierto en Xcode.
+- `Sources/IOSLaunchLab/main.swift` abierto.
 - `docs/flujo-alumno.md` abierto.
 - GitHub autenticado en tu maquina.
 - Una forma rapida de compartir el link del repo.
@@ -19,7 +20,7 @@ El pitch debe haber terminado.
 
 Senal de avance:
 
-- Los alumnos entienden el problema: versiones manuales, zips, WhatsApp y codigo sobrescrito.
+- Los alumnos entienden el problema: carpetas de Xcode duplicadas, versiones manuales y codigo sobrescrito.
 
 Si vas tarde:
 
@@ -50,19 +51,21 @@ Todos deberian tener:
 - Fork creado.
 - Repo clonado.
 - Terminal dentro de `curso-git-bootcamp`.
+- `swift run` ejecutado al menos una vez.
 
 Verificacion:
 
 ```bash
 git status
 git remote -v
+swift run
 ```
 
 Si varios siguen atorados:
 
 - Pide que trabajen en parejas.
 - No expliques Git avanzado todavia.
-- Resuelve autenticacion solo en los equipos bloqueados.
+- Resuelve Xcode o autenticacion solo en los equipos bloqueados.
 
 ## Minuto 55
 
@@ -88,19 +91,21 @@ Resultado esperado:
 
 Todos deberian tener:
 
-- Tarjeta agregada en `index.html`.
+- `AppIdea` agregado en `Sources/IOSLaunchLab/main.swift`.
+- `swift run` funcionando.
 - Primer commit creado.
 
 Verificacion:
 
 ```bash
+swift run
 git status
 git log --oneline -3
 ```
 
 Si alguien no tiene commit:
 
-- Repite `git diff`, `git add index.html`, `git commit -m "..."`
+- Repite `git diff`, `git add Sources/IOSLaunchLab/main.swift`, `git commit -m "..."`
 - No pases todavia a Pull Requests si la mitad del grupo no tiene commit.
 
 ## Minuto 110
@@ -119,7 +124,7 @@ git push -u origin feat/nombre-apellido
 En GitHub:
 
 - PR abierto hacia `main` del repo instructor.
-- Diff visible.
+- Diff Swift visible.
 - Plantilla de PR llenada.
 
 ## Minuto 130
@@ -128,7 +133,7 @@ Inicia conflicto controlado.
 
 Tu accion:
 
-- Edita en `main` la linea `tema-oficial`.
+- Edita en `main` la linea `sprintMission`.
 - Haz commit y push.
 
 Accion de alumnos:
@@ -165,8 +170,9 @@ Verificacion:
 
 ```bash
 git status
-git add index.html
+git add Sources/IOSLaunchLab/main.swift
 git commit
+swift run
 git push
 ```
 
@@ -186,6 +192,7 @@ git status
 git switch main
 git pull upstream main
 git switch -c feat/mi-tarea
+swift run
 git diff
 git add .
 git commit -m "Mensaje claro"

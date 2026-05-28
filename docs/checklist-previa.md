@@ -28,7 +28,20 @@ Debe aparecer una version, por ejemplo:
 git version 2.43.0
 ```
 
-## 3. Configuracion inicial
+## 3. Xcode y Swift listos
+
+Este curso asume que ya tienes Xcode configurado.
+
+Verifica en terminal:
+
+```bash
+xcode-select -p
+swift --version
+```
+
+En Xcode, debes poder abrir un proyecto desde `Package.swift`.
+
+## 4. Configuracion inicial de Git
 
 Configura tu nombre y correo. Usa el mismo correo que tengas en GitHub si quieres que tus commits aparezcan ligados a tu perfil.
 
@@ -43,9 +56,9 @@ Verifica:
 git config --global --list
 ```
 
-## 4. Editor recomendado
+## 5. Editor recomendado
 
-Instala Visual Studio Code:
+Puedes usar Xcode para editar Swift. Tambien puedes instalar Visual Studio Code:
 
 <https://code.visualstudio.com>
 
@@ -53,8 +66,9 @@ Extensiones utiles, no obligatorias:
 
 - GitLens
 - GitHub Pull Requests
+- Swift
 
-## 5. Prueba rapida
+## 6. Prueba rapida de Git
 
 Crea una carpeta temporal y confirma que Git funciona:
 
@@ -69,12 +83,11 @@ git commit -m "Agrega nota inicial"
 git log --oneline
 ```
 
-Si el commit falla por nombre o correo, repite la configuracion del paso 3.
+Si el commit falla por nombre o correo, repite la configuracion del paso 4.
 
-## 6. Lo que debes traer
+## 7. Lo que debes traer
 
-- Laptop con bateria o cargador.
+- Laptop Mac con Xcode configurado.
 - Terminal abierta.
 - GitHub abierto en el navegador.
-- VS Code instalado.
 - Internet funcionando.

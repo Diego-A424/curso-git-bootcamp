@@ -20,6 +20,19 @@ git config --global user.name
 git config --global user.email
 ```
 
+## `swift: command not found`
+
+La terminal no encuentra Swift.
+
+En macOS con Xcode instalado, abre Xcode una vez y acepta las herramientas de desarrollo. Luego revisa:
+
+```bash
+xcode-select -p
+swift --version
+```
+
+Si sigue fallando, abre el proyecto desde Xcode usando `Package.swift` y ejecuta desde el boton Run.
+
 ## `remote upstream already exists`
 
 Ya habias agregado `upstream`.
@@ -115,10 +128,10 @@ Despues pide ayuda al instructor para dejar `main` limpio si hace falta.
 
 Puede pasar si no tocaste exactamente la misma linea que el instructor.
 
-Revisa que modificaste esta linea de `index.html`:
+Revisa que modificaste esta linea de `Sources/IOSLaunchLab/main.swift`:
 
-```html
-<p id="tema-oficial" class="theme-line">Tema oficial: convertir cambios sueltos en colaboracion profesional.</p>
+```swift
+let sprintMission = "Mision del sprint: convertir ideas iOS en prototipos claros, colaborativos y listos para presentar."
 ```
 
 Luego confirma que trajiste cambios de `upstream`:
@@ -169,18 +182,29 @@ git commit -m "Describe el cambio"
 git push
 ```
 
+## `swift run` falla despues de editar
+
+Lee el error y revisa lo mas comun:
+
+- Falta una coma entre parametros.
+- Falta cerrar `)`.
+- Editaste fuera del bloque `ideas.append(...)`.
+- Dejaste comillas sin cerrar.
+
+Vuelve a revisar la plantilla en [plantilla-tarjeta.md](plantilla-tarjeta.md).
+
 ## Quiero cancelar cambios que no he guardado
 
-Si estas seguro de descartar un archivo:
+Si estas seguro de descartar el archivo Swift:
 
 ```bash
-git restore index.html
+git restore Sources/IOSLaunchLab/main.swift
 ```
 
 Si solo lo agregaste con `git add` pero aun no hiciste commit:
 
 ```bash
-git restore --staged index.html
+git restore --staged Sources/IOSLaunchLab/main.swift
 ```
 
 No uses `git reset --hard` durante el curso salvo que el instructor lo indique.

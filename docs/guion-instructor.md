@@ -2,7 +2,7 @@
 
 Duracion total: 3 horas.
 
-Formato recomendado: practica guiada. Proyecta tu terminal y GitHub. Los alumnos hacen los pasos contigo.
+Formato recomendado: practica guiada. Proyecta tu terminal, Xcode y GitHub. Los alumnos hacen los pasos contigo.
 
 ## Antes de iniciar
 
@@ -10,7 +10,8 @@ Ten listo:
 
 - Repo publico en GitHub.
 - URL del repo en una diapositiva o pizarron.
-- `index.html` abierto en VS Code.
+- `Package.swift` abierto en Xcode.
+- `Sources/IOSLaunchLab/main.swift` abierto.
 - GitHub abierto en navegador.
 - Una rama de prueba para demostrar errores si hace falta.
 
@@ -18,21 +19,17 @@ Ten listo:
 
 Di:
 
-> "Levanten la mano si han tenido archivos llamados `Proyecto_Final`, `Proyecto_Final_Bueno`, `Proyecto_Final_Ahora_Si_Este_Es`."
+> "Levanten la mano si han tenido un proyecto de Xcode llamado `AppFinal`, `AppFinalBuena`, `AppFinalAhoraSi`, o si alguna vez copiaron una carpeta completa porque les daba miedo romper el proyecto."
 
 Espera reaccion.
 
 Di:
 
-> "Ahora levanten la mano si han unido codigo por WhatsApp, correo, USB o copiando carpetas completas."
-
-Conecta:
-
-> "Eso funciona hasta que deja de funcionar. El problema no es que no sepan programar. El problema es que estan trabajando sin historial, sin trazabilidad y sin una forma profesional de colaborar."
+> "En iOS eso duele mas: un archivo del proyecto, una rama mal mezclada o una version enviada por AirDrop puede romperle el avance a todo el equipo. Git existe para que cada cambio tenga historia, responsable y forma de regresar."
 
 Cierra el pitch:
 
-> "Hoy vamos a aprender el flujo minimo que si van a usar: guardar cambios, crear ramas, subir trabajo a GitHub, abrir Pull Requests y resolver conflictos. No vamos a ver Git como manual. Lo vamos a usar como herramienta para sobrevivir proyectos reales."
+> "Hoy vamos a aprender el flujo minimo que si van a usar: ramas, commits, GitHub, Pull Requests y conflictos. Lo haremos con Swift, no con teoria. Van a modificar un proyecto ejecutable y van a ver como se trabaja sin pisar el codigo de otros."
 
 ## 0:10 - 0:25 | Conceptos minimos
 
@@ -49,6 +46,7 @@ Proyecta:
 
 ```bash
 git --version
+swift --version
 git config --global user.name "Tu Nombre"
 git config --global user.email "tu-correo@example.com"
 git config --global --list
@@ -56,11 +54,11 @@ git config --global --list
 
 Frase clave:
 
-> "Git no es guardar por guardar. Git es poder explicar que cambio, cuando cambio y por que cambio."
+> "Git no es guardar por guardar. Git es poder explicar que cambio, cuando cambio y por que cambio. En un proyecto iOS eso salva demos, entregas y equipos."
 
 ## 0:25 - 1:05 | Primer flujo real
 
-Objetivo: que clonen, conecten el repo principal, creen una rama, editen y creen su primer commit sin trabajar directo en `main`.
+Objetivo: que clonen, prueben el Swift Package, conecten el repo principal, creen una rama, editen Swift y creen su primer commit sin trabajar directo en `main`.
 
 Primero, pide que hagan fork del repo.
 
@@ -71,11 +69,12 @@ git clone https://github.com/USUARIO-ALUMNO/curso-git-bootcamp.git
 cd curso-git-bootcamp
 git status
 git remote -v
+swift run
 ```
 
 Di:
 
-> "`git status` es su radar. Si no saben que esta pasando, no adivinen: corran `git status`."
+> "Primero comprobamos dos cosas: que Git sabe donde estamos y que el proyecto Swift corre antes de tocarlo. Si rompemos algo despues, ya sabemos que lo rompimos nosotros."
 
 Conecta el repo principal:
 
@@ -99,25 +98,26 @@ Di:
 
 > "Nunca arrancamos una tarea real directo en `main`. Primero creamos una rama. La rama es su mesa de trabajo."
 
-Abren `index.html`.
+Abren `Sources/IOSLaunchLab/main.swift`.
 
 Pide:
 
-> "No cambien todo. Solo vamos a agregar una tarjeta personal en el directorio. Un cambio pequeno, claro y facil de revisar."
+> "No cambien todo. Solo vamos a agregar una idea de app iOS como un `AppIdea`. Un cambio pequeno, claro, ejecutable y facil de revisar."
 
 Comandos:
 
 ```bash
+swift run
 git status
 git diff
-git add index.html
-git commit -m "Agrega tarjeta de Nombre Apellido"
+git add Sources/IOSLaunchLab/main.swift
+git commit -m "Agrega idea iOS de Nombre Apellido"
 git log --oneline
 ```
 
 Explica staging:
 
-> "`git add` no guarda todavia. Solo prepara lo que entrara en la foto. `git commit` toma la foto."
+> "`git add` no guarda todavia. Solo prepara lo que entrara en la foto. `git commit` toma la foto. `swift run` demuestra que nuestra foto no rompe el proyecto."
 
 ## 1:05 - 1:35 | Ramas e historial
 
@@ -162,12 +162,12 @@ En GitHub, muestra:
 
 - Donde aparece la rama subida.
 - Como abrir el Pull Request.
-- Como leer el diff.
+- Como leer el diff de Swift.
 - Como llenar la plantilla.
 
 Di:
 
-> "Un Pull Request no es burocracia. Es una conversacion sobre un cambio antes de meterlo a la version principal."
+> "Un Pull Request no es burocracia. Es una conversacion sobre un cambio antes de meterlo a la version principal. En iOS, esto evita que un cambio pequeno rompa el demo de todos."
 
 Revisa uno o dos PRs en vivo. Comenta algo pequeno para que vean que la revision es parte del flujo.
 
@@ -177,8 +177,8 @@ Objetivo: que vivan un conflicto controlado y lo resuelvan.
 
 Primero, haz un cambio en `main` del repo principal sobre la linea:
 
-```html
-<p id="tema-oficial" class="theme-line">Tema oficial: convertir cambios sueltos en colaboracion profesional.</p>
+```swift
+let sprintMission = "Mision del sprint: convertir ideas iOS en prototipos claros, colaborativos y listos para presentar."
 ```
 
 Haz commit y push.
@@ -197,9 +197,9 @@ git merge main
 
 Cuando aparezca el conflicto, di:
 
-> "Esto no es un error fatal. Git se detuvo porque no quiere inventar una decision por nosotros."
+> "Esto no es un error fatal. Git se detuvo porque no quiere inventar una decision por nosotros. Dos personas tocaron la misma linea Swift y alguien debe decidir que queda."
 
-Abre `index.html` y explica:
+Abre `Sources/IOSLaunchLab/main.swift` y explica:
 
 - `<<<<<<< HEAD`: lo que trae mi rama.
 - `=======`: separador.
@@ -211,8 +211,9 @@ Cerrar:
 
 ```bash
 git status
-git add index.html
+git add Sources/IOSLaunchLab/main.swift
 git commit
+swift run
 git push
 ```
 
@@ -225,6 +226,7 @@ git status
 git switch main
 git pull upstream main
 git switch -c feat/mi-tarea
+swift run
 git diff
 git add .
 git commit -m "Describe el cambio"
@@ -235,51 +237,8 @@ Frases finales:
 
 > "No necesitan saber todo Git hoy. Necesitan dominar este flujo."
 
-> "Si mañana trabajan en un proyecto de equipo, ya no manden carpetas. Creen ramas, hagan commits y abran Pull Requests."
+> "Si manana trabajan en una app iOS de equipo, ya no manden carpetas de Xcode. Creen ramas, prueben, hagan commits y abran Pull Requests."
 
 ## Manejo de problemas frecuentes
 
-### `Author identity unknown`
-
-Solucion:
-
-```bash
-git config --global user.name "Tu Nombre"
-git config --global user.email "tu-correo@example.com"
-```
-
-### Estoy en la rama incorrecta
-
-Diagnostico:
-
-```bash
-git status
-git branch
-```
-
-Solucion comun:
-
-```bash
-git switch nombre-de-rama
-```
-
-### No puedo hacer push
-
-Revisar:
-
-```bash
-git remote -v
-git branch
-```
-
-Normalmente pasa porque estan intentando subir al repo del instructor en vez de su fork.
-
-### No aparece el Pull Request
-
-Revisar que la rama se subio:
-
-```bash
-git push -u origin feat/nombre-apellido
-```
-
-Luego entrar al fork en GitHub y buscar la rama.
+Usa [errores-comunes.md](errores-comunes.md) si alguien se atora con autenticacion, ramas, `swift run`, upstream o conflictos.

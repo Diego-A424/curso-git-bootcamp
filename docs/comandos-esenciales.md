@@ -2,6 +2,15 @@
 
 Esta es la chuleta del curso. No intenta cubrir todo Git, solo lo que vas a usar todos los dias.
 
+## Verificar el proyecto Swift
+
+```bash
+swift --version
+swift run
+```
+
+`swift run` compila y ejecuta el Swift Package. Usalo antes de hacer commit para confirmar que tu cambio no rompio el ejercicio.
+
 ## Estado del repositorio
 
 ```bash
@@ -25,10 +34,10 @@ Muestra el historial resumido.
 ## Guardar cambios
 
 ```bash
-git add archivo.html
+git add Sources/IOSLaunchLab/main.swift
 ```
 
-Prepara un archivo especifico.
+Prepara el archivo Swift del ejercicio.
 
 ```bash
 git add .
@@ -37,16 +46,16 @@ git add .
 Prepara todos los cambios de la carpeta actual.
 
 ```bash
-git commit -m "Agrega tarjeta de Maria Lopez"
+git commit -m "Agrega idea iOS de Maria Lopez"
 ```
 
 Guarda una version del proyecto.
 
 Buenos mensajes:
 
-- `Agrega tarjeta de Maria Lopez`
-- `Corrige enlace del directorio`
-- `Actualiza titulo de la Expo`
+- `Agrega idea iOS de Maria Lopez`
+- `Corrige mision del sprint iOS`
+- `Ajusta descripcion de LaunchBoard`
 
 Malos mensajes:
 
@@ -117,16 +126,16 @@ Mezcla la rama `main` local dentro de tu rama actual.
 ## Deshacer sin destruir
 
 ```bash
-git restore archivo.html
+git restore Sources/IOSLaunchLab/main.swift
 ```
 
-Descarta cambios no guardados en un archivo.
+Descarta cambios no guardados en el archivo Swift.
 
 ```bash
-git restore --staged archivo.html
+git restore --staged Sources/IOSLaunchLab/main.swift
 ```
 
-Saca un archivo del area de preparacion, pero conserva su contenido.
+Saca el archivo Swift del area de preparacion, pero conserva su contenido.
 
 ## Comandos que no se usan a ciegas
 

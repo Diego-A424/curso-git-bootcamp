@@ -1,12 +1,12 @@
-# Curso Git y GitHub Bootcamp
+# Curso Git y GitHub Bootcamp para iOS Lab
 
-Repositorio base para un curso practico de 3 horas sobre Git y GitHub.
+Repositorio base para un curso practico de 3 horas sobre Git y GitHub usando Swift.
 
-El objetivo no es memorizar todos los comandos de Git. El objetivo es que cada alumno salga sabiendo trabajar con historial, ramas, GitHub, Pull Requests y conflictos basicos sin depender de pasar archivos por WhatsApp, USB o carpetas llamadas `Proyecto_Final_Ahora_Si`.
+El objetivo no es memorizar todos los comandos de Git. El objetivo es que cada alumno salga sabiendo trabajar con historial, ramas, GitHub, Pull Requests y conflictos basicos mientras modifica un proyecto Swift familiar para un laboratorio iOS.
 
 ## Para quien es
 
-Estudiantes de ingenieria entre 3er y 8vo semestre que ya programan o estan por trabajar en proyectos de equipo, residencias, hackathons o materias integradoras.
+Estudiantes de ingenieria entre 3er y 8vo semestre que ya tienen Xcode configurado y quieren aprender el flujo real de trabajo con Git y GitHub.
 
 ## Resultado esperado
 
@@ -14,28 +14,41 @@ Al final del curso, cada alumno habra hecho el flujo completo:
 
 1. Hacer fork del repositorio.
 2. Clonar su fork.
-3. Crear una rama de trabajo.
-4. Modificar un proyecto HTML real.
-5. Revisar cambios con Git.
-6. Crear commits claros.
-7. Subir su rama a GitHub.
-8. Abrir un Pull Request.
-9. Actualizarse desde el repo principal.
-10. Resolver un conflicto controlado.
+3. Conectar el repo principal como `upstream`.
+4. Crear una rama de trabajo.
+5. Modificar un proyecto Swift ejecutable.
+6. Probar el cambio con `swift run` o desde Xcode.
+7. Revisar cambios con Git.
+8. Crear commits claros.
+9. Subir su rama a GitHub.
+10. Abrir un Pull Request.
+11. Actualizarse desde el repo principal.
+12. Resolver un conflicto controlado.
 
 ## Proyecto practico
 
-El proyecto es una landing page sencilla llamada **Expo Ingenieria**.
+El proyecto se llama **iOS Launch Lab**.
 
-Cada alumno agregara una tarjeta personal en `index.html` con:
+Es un Swift Package ejecutable. Los alumnos agregan una idea de app iOS al archivo:
 
-- Nombre
-- Semestre
-- Area de interes
-- Lenguaje o herramienta favorita
-- Idea de proyecto final
+```text
+Sources/IOSLaunchLab/main.swift
+```
 
-No hay dependencias, build, servidor ni instalacion de frameworks. Solo HTML, CSS, Git y GitHub.
+Cada aporte incluye:
+
+- Nombre del alumno.
+- Semestre.
+- Nombre de la app.
+- Problema que resuelve.
+- Feature estrella.
+- Concepto Swift que quiere practicar.
+
+El programa imprime un tablero de ideas en terminal. Se puede abrir en Xcode desde `Package.swift` o ejecutar con:
+
+```bash
+swift run
+```
 
 ## Material incluido
 
@@ -49,43 +62,19 @@ No hay dependencias, build, servidor ni instalacion de frameworks. Solo HTML, CS
 - [Errores comunes](docs/errores-comunes.md): problemas esperados y como resolverlos rapido.
 - [Checkpoints del instructor](docs/checkpoints-instructor.md): puntos de control por minuto para no perder el ritmo.
 - [Buenas practicas](docs/buenas-practicas.md): reglas para trabajar bien desde el inicio.
-- [Plantilla de tarjeta](docs/plantilla-tarjeta.md): snippet que los alumnos pueden adaptar.
+- [Plantilla Swift](docs/plantilla-tarjeta.md): snippet `AppIdea` que los alumnos pueden adaptar.
 
 ## Cronograma de 3 horas
 
 | Tiempo | Bloque | Enfoque |
 | --- | --- | --- |
-| 0:00 - 0:10 | Pitch | Por que Git importa en proyectos reales |
+| 0:00 - 0:10 | Pitch | Por que Git importa en proyectos iOS reales |
 | 0:10 - 0:25 | Conceptos minimos | Git, GitHub, commit, rama, Pull Request |
-| 0:25 - 1:05 | Primer flujo real | fork, clone, upstream, branch, edit, add, commit |
+| 0:25 - 1:05 | Primer flujo real | fork, clone, upstream, branch, edit, run, add, commit |
 | 1:05 - 1:35 | Ramas e historial | branch, switch, log, flujo por tarea |
 | 1:35 - 2:10 | GitHub | remote, push, fork, Pull Request |
 | 2:10 - 2:40 | Colaboracion | upstream, fetch, pull/merge, conflicto |
 | 2:40 - 3:00 | Cierre | buenas practicas, dudas y flujo diario |
-
-## Comandos para publicar este repo en GitHub
-
-Desde esta carpeta, despues de revisar el contenido:
-
-```bash
-git init
-git add .
-git commit -m "Prepara curso practico de Git y GitHub"
-git branch -M main
-```
-
-Si usas GitHub CLI:
-
-```bash
-gh repo create curso-git-bootcamp --public --source=. --remote=origin --push
-```
-
-Si prefieres crear el repo manualmente en GitHub:
-
-```bash
-git remote add origin https://github.com/TU-USUARIO/curso-git-bootcamp.git
-git push -u origin main
-```
 
 ## Como se usa en clase
 
@@ -94,6 +83,7 @@ El instructor comparte la URL publica del repo. Los alumnos hacen fork desde Git
 ```bash
 git clone https://github.com/USUARIO-ALUMNO/curso-git-bootcamp.git
 cd curso-git-bootcamp
+swift run
 ```
 
 Despues siguen [docs/flujo-alumno.md](docs/flujo-alumno.md).

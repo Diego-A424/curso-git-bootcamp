@@ -4,20 +4,20 @@ Un conflicto no significa que Git se rompio. Significa que dos cambios tocaron l
 
 ## Objetivo
 
-Provocar un conflicto controlado, resolverlo y subir la solucion.
+Provocar un conflicto controlado en Swift, resolverlo y subir la solucion.
 
 ## Preparacion del instructor
 
-En el repo principal, modifica esta linea de `index.html` en `main`:
+En el repo principal, modifica esta linea de `Sources/IOSLaunchLab/main.swift` en `main`:
 
-```html
-<p id="tema-oficial" class="theme-line">Tema oficial: convertir cambios sueltos en colaboracion profesional.</p>
+```swift
+let sprintMission = "Mision del sprint: convertir ideas iOS en prototipos claros, colaborativos y listos para presentar."
 ```
 
 Cambia solo el texto interno. Por ejemplo:
 
-```html
-<p id="tema-oficial" class="theme-line">Tema oficial: colaborar sin perder historial ni sobrescribir a tu equipo.</p>
+```swift
+let sprintMission = "Mision del sprint: preparar ideas iOS que puedan defenderse como pitch de App Store."
 ```
 
 Haz commit y push directo a `main` del repo principal.
@@ -26,16 +26,16 @@ Haz commit y push directo a `main` del repo principal.
 
 En su rama de trabajo, cada alumno modifica la misma linea, pero con otro texto:
 
-```html
-<p id="tema-oficial" class="theme-line">Tema oficial: aprender Git practicando con un proyecto real.</p>
+```swift
+let sprintMission = "Mision del sprint: aprender Git colaborando sobre un proyecto Swift ejecutable."
 ```
 
 Luego guarda su cambio:
 
 ```bash
 git status
-git add index.html
-git commit -m "Actualiza tema oficial de la Expo"
+git add Sources/IOSLaunchLab/main.swift
+git commit -m "Actualiza mision del sprint iOS"
 ```
 
 ## Traer cambios del repo principal
@@ -48,17 +48,17 @@ git switch feat/nombre-apellido
 git merge main
 ```
 
-Debe aparecer un conflicto en `index.html`.
+Debe aparecer un conflicto en `Sources/IOSLaunchLab/main.swift`.
 
 ## Como se ve un conflicto
 
 Git marcara una zona similar a esta:
 
-```html
+```swift
 <<<<<<< HEAD
-<p id="tema-oficial" class="theme-line">Tema oficial: aprender Git practicando con un proyecto real.</p>
+let sprintMission = "Mision del sprint: aprender Git colaborando sobre un proyecto Swift ejecutable."
 =======
-<p id="tema-oficial" class="theme-line">Tema oficial: colaborar sin perder historial ni sobrescribir a tu equipo.</p>
+let sprintMission = "Mision del sprint: preparar ideas iOS que puedan defenderse como pitch de App Store."
 >>>>>>> main
 ```
 
@@ -72,20 +72,21 @@ Interpretacion:
 
 Edita el archivo y deja una version final, por ejemplo:
 
-```html
-<p id="tema-oficial" class="theme-line">Tema oficial: aprender Git colaborando sin perder historial.</p>
+```swift
+let sprintMission = "Mision del sprint: aprender Git creando ideas iOS colaborativas y listas para presentar."
 ```
 
 Despues:
 
 ```bash
 git status
-git add index.html
+git add Sources/IOSLaunchLab/main.swift
 git commit
+swift run
 git push
 ```
 
-Si Git abre un editor para el commit del merge, guarda y cierra. En VS Code puedes cerrar la pestana del mensaje despues de guardar.
+Si Git abre un editor para el commit del merge, guarda y cierra. En Xcode o VS Code puedes guardar el mensaje y cerrar la pestana.
 
 ## Mensaje para recordar
 

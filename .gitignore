@@ -8,6 +8,14 @@ Thumbs.db
 *.swp
 *.swo
 
+# Xcode y Swift
+.build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+
 # Dependencias y builds comunes
 node_modules/
 dist/
