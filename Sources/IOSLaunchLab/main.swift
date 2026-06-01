@@ -23,17 +23,17 @@ var ideas: [AppIdea] = [
 ]
 
 // ALUMNOS: agreguen su AppIdea debajo de este comentario.
-
-    ideas.append(
-        AppIdea(
-            owner: "Tu Nombre",
-            semester: "Tu Semestre",
-            appName: "Nombre de tu App",
-            problem: "Describe el problema que tu app resuelve.",
-            flagshipFeature: "Describe la característica estrella de tu app.",
-            swiftConcept: "Menciona el concepto de Swift que aplicaste."
-        )
+ideas.append(
+    AppIdea(
+        owner: "Juan Perez",
+        semester: "3er semestre",
+        appName: "StudentFlow",
+        problem: "Quiero ver que el flujo funcione impecable.",
+        flagshipFeature: "Aprender Git sin estrés.",
+        swiftConcept: "Arrays"
     )
+)
+
 func renderLaunchBoard(_ ideas: [AppIdea]) {
     print("🚀 ============================================== 🚀")
     print("📱             iOS Launch Lab                   📱")
