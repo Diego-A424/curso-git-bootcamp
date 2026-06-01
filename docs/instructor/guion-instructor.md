@@ -172,21 +172,28 @@ Di:
 
 Revisa uno o dos PRs en vivo. Comenta algo pequeno para que vean que la revision es parte del flujo.
 
-## 2:10 - 2:40 | Colaboracion y conflictos
+## 2:10 - 2:40 | Colaboracion y la lluvia de conflictos (Estrategia por Lotes)
 
-Objetivo: que vivan un conflicto controlado y lo resuelvan.
+Objetivo: que vivan un conflicto real de integracion, entender por que sucede en equipos grandes y resolverlo rapido.
 
-Primero, haz un cambio en `main` del repo principal sobre la linea:
+Di:
 
-```swift
-let sprintMission = "Mision del sprint: convertir ideas iOS en prototipos claros, colaborativos y listos para presentar."
-```
+> "Todos acaban de agregar su idea en la misma zona del archivo `main.swift`. En un equipo de 20 personas, si todos editan la misma linea al mismo tiempo, Git no va a adivinar que idea va primero. Nos va a pedir que lo resolvamos manualmente."
 
-Haz commit y push.
+**Paso 1: Pausa General**
+Pide a todos que abran sus Pull Requests pero **nadie hace merge**. Tendras ~20 PRs en verde.
 
-Pide a los alumnos que, en su rama, cambien esa misma linea con otro texto y hagan commit.
+**Paso 2: El Sacrificio (Aprobacion por Lotes)**
+Toma los primeros 5 PRs y dales Merge rapidamente frente a la clase.
 
-Luego:
+Di:
+
+> "Acabo de aprobar las primeras 5 ideas. Para los 15 restantes: acaban de chocar con ellos. Sus PRs ahora estan en rojo. Git dice que tienen conflictos."
+
+**Paso 3: La Carrera por Resolver**
+Pide a los 15 alumnos restantes que bajen el codigo actualizado, resuelvan el conflicto agrupando su idea junto a las de sus companeros, y vuelvan a subir.
+
+Comandos para ellos:
 
 ```bash
 git fetch upstream
@@ -196,27 +203,20 @@ git switch feat/nombre-apellido
 git merge main
 ```
 
-Cuando aparezca el conflicto, di:
-
-> "Esto no es un error fatal. Git se detuvo porque no quiere inventar una decision por nosotros. Dos personas tocaron la misma linea Swift y alguien debe decidir que queda."
-
-Abre `Sources/IOSLaunchLab/main.swift` y explica:
+Abre `Sources/IOSLaunchLab/main.swift` en pantalla y explica:
 
 - `<<<<<<< HEAD`: lo que trae mi rama.
 - `=======`: separador.
-- `>>>>>>> main`: lo que viene de la rama que estoy mezclando.
+- `>>>>>>> main`: las ideas que ya entraron de mis companeros.
 
-Pide que dejen una sola version final.
+> "Su trabajo no es borrar la idea de su companero, es juntarlas. Borren las marcas rojas de Git y dejen el codigo limpio. Luego, ejecuten `swift run` para asegurar que no rompieron nada."
 
-Cerrar:
+**Paso 4: El Bucle (La realidad)**
+A medida que vayan resolviendo y haciendo push, sus PRs se pondran en verde. Dale Merge al primero que llegue. ¡Esto generara un NUEVO conflicto para los otros 14!
 
-```bash
-git status
-git add Sources/IOSLaunchLab/main.swift
-git commit
-swift run
-git push
-```
+Di:
+
+> "La vida real no es lineal. Si te tardas en resolver un conflicto, alguien mas metera su codigo antes que tu y tendras que volver a resolverlo. Asi que acompilar con `swift run` y hacer push rapido."
 
 ## 2:40 - 3:00 | Cierre
 

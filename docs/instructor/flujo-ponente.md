@@ -74,21 +74,14 @@ git push -u origin feat/nombre-apellido
 
 10. Abren Pull Request hacia `main` del repo del instructor.
 
-## Conflicto controlado
+## Lluvia de Conflictos (Aprobacion por Lotes)
 
-Tu cambio en `main`:
+Para clases grandes (20+ alumnos), todos tendran conflicto al intentar agregar su `AppIdea` en la misma linea.
 
-```swift
-let sprintMission = "Mision del sprint: preparar ideas iOS que puedan defenderse como pitch de App Store."
-```
-
-Cambio que pides a alumnos en su rama:
-
-```swift
-let sprintMission = "Mision del sprint: aprender Git colaborando sobre un proyecto Swift ejecutable."
-```
-
-Luego todos sincronizan:
+1. Pide a todos abrir su PR (quedaran ~20 en verde).
+2. Aprueba (Merge) los primeros 5 PRs rapidamente.
+3. Los 15 restantes se pondran en rojo (conflicto).
+4. Pide a los restantes sincronizar y resolver:
 
 ```bash
 git fetch upstream
@@ -98,15 +91,18 @@ git switch feat/nombre-apellido
 git merge main
 ```
 
-Resuelven el conflicto dejando una sola version final, despues:
+5. En Xcode, borran las marcas de Git y juntan las ideas de todos en el mismo arreglo.
+6. Prueban con `swift run` para evitar errores de sintaxis.
+7. Guardan y suben:
 
 ```bash
 git status
 git add Sources/IOSLaunchLab/main.swift
-git commit
-swift run
+git commit -m "fix: resuelve conflicto de integracion"
 git push
 ```
+
+8. Aprueba el primer PR que se ponga verde (esto creara nuevos conflictos para los demas, ensenando la naturaleza dinamica del trabajo en equipo).
 
 ## Cierre
 
